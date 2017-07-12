@@ -11,7 +11,7 @@ import java.util.Locale;
 /**
  * Created by CHANDAN on 7/11/2017.
  */
-
+//Bounded service to get Time.
 public class BoundService extends Service {
     private final IBinder myBinder = new MyLocalBinder();
 

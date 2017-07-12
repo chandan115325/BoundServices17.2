@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     BoundService myService;
     boolean isBound = false;
-
+//To establish the bound service connection
     private ServiceConnection myConnection = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName className,
@@ -28,17 +28,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+    // to display the home screen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-
+// Binding the service
         Intent intent = new Intent(this, BoundService.class);
         bindService(intent, myConnection, Context.BIND_AUTO_CREATE);
     }
-
+// showTime() method to display the time
     public void showTime(View view)
     {
         String currentTime = myService.getCurrentTime();
